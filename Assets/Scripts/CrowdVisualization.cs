@@ -130,8 +130,10 @@ public class CrowdVisualization : MonoBehaviour {
                 Quaternion newRot = Quaternion.Euler(0.0f,
                     180f - person.Track[person.CurrentIndex].FacingDir * 180f / Mathf.PI, 
                     0.0f);
-                person.GameObject.transform.localPosition = Vector3.Slerp(person.GameObject.transform.localPosition, newPos, Time.deltaTime);
-                person.GameObject.transform.localRotation = Quaternion.Lerp(person.GameObject.transform.localRotation, newRot, Time.deltaTime);
+                //                person.GameObject.transform.localPosition = Vector3.Slerp(person.GameObject.transform.localPosition, newPos, Time.deltaTime);
+                //                person.GameObject.transform.localRotation = Quaternion.Lerp(person.GameObject.transform.localRotation, newRot, Time.deltaTime);
+                person.GameObject.transform.localPosition = newPos;
+                person.GameObject.transform.localRotation = newRot;
                 person.CurrentIndex++;
             }
         }
